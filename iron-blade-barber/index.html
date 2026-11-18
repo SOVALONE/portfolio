@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron &amp; Blade — Barbershop</title>
+<meta name="description" content="Classic cuts, hot towel shaves and beard grooming. Book online in 30 seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0d;--bg2:#151515;--card:#1b1b1b;--line:#2a2a2a;--fg:#f2ede4;--mute:#9a948a;--gold:#c9a45c;--red:#b33a2b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.bb{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:.95}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;font:700 14px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:0;cursor:pointer;transition:.25s}
+.btn-g{background:var(--gold);color:#111}.btn-g:hover{background:#e0bc72;transform:translateY(-2px)}
+.btn-o{border:1px solid var(--line);background:none;color:var(--fg)}.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.eb{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:14px}
+.eb::before{content:"";width:34px;height:1px;background:var(--gold)}
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+nav.s{background:#0d0d0de6;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{font-family:'Bebas Neue';font-size:30px;display:flex;align-items:center;gap:12px}
+.pole{width:14px;height:34px;border-radius:7px;background:repeating-linear-gradient(-45deg,var(--red) 0 6px,#fff 6px 12px,#2a4a8a 12px 18px,#fff 18px 24px);background-size:100% 34px;animation:pole 1.2s linear infinite;box-shadow:0 0 0 2px var(--gold)}
+@keyframes pole{to{background-position:0 34px}}
+.links{display:flex;gap:36px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+.links a{color:var(--mute);transition:.2s}.links a:hover{color:var(--gold)}
+@media(max-width:860px){.links{display:none}}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,#2a2115 0,var(--bg) 60%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(80px,14vw,200px)}
+.hero h1 span{color:var(--gold);display:block}
+.hero p{max-width:440px;color:var(--mute);font-size:18px;margin:26px 0 40px}
+.big{position:absolute;right:-4vw;top:50%;transform:translateY(-50%);font-family:'Bebas Neue';font-size:46vw;line-height:.8;color:transparent;-webkit-text-stroke:1px #c9a45c22;pointer-events:none;z-index:1}
+.razor{position:absolute;right:10%;top:50%;width:min(34vw,420px);transform:translateY(-50%) rotate(-28deg);z-index:1;filter:drop-shadow(0 30px 40px #000)}
+@media(max-width:900px){.razor{opacity:.18;right:-10%}}
+.stats{display:flex;gap:50px;margin-top:60px;flex-wrap:wrap}
+.stats b{font-family:'Bebas Neue';font-size:46px;color:var(--gold);display:block;line-height:1}
+.stats span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+section{padding:130px 0}
+.h2{font-size:clamp(56px,8vw,110px)}
+.h2 span{color:var(--gold)}
+.svc{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.svc p.l{color:var(--mute);margin-top:22px;max-width:360px}
+.list>div{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);transition:.3s;cursor:default}
+.list>div:hover{padding-left:16px;border-color:var(--gold)}
+.list h3{font-size:34px}
+.list small{display:block;color:var(--mute);font-family:Manrope;font-size:14px;letter-spacing:0;margin-top:6px;line-height:1.4}
+.list .t{color:var(--mute);font-size:14px}
+.list .p{font-family:'Bebas Neue';font-size:38px;color:var(--gold)}
+@media(max-width:900px){.svc{grid-template-columns:1fr;gap:40px}}
+.team{background:var(--bg2)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.bar{background:var(--card);border:1px solid var(--line);transition:.3s}
+.bar:hover{border-color:var(--gold);transform:translateY(-6px)}
+.ph{aspect-ratio:4/5;display:grid;place-items:end center;overflow:hidden;position:relative}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,#000a)}
+.ph svg{width:78%}
+.bar .i{padding:24px}
+.bar h3{font-size:36px}
+.bar p{color:var(--gold);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+@media(max-width:900px){.tgrid{grid-template-columns:1fr}}
+.quote{text-align:center}
+.quote q{display:block;font-family:'Bebas Neue';font-size:clamp(40px,6vw,76px);line-height:1.05;max-width:1000px;margin:0 auto}
+.quote q::before,.quote q::after{content:""}
+.quote .st{color:var(--gold);letter-spacing:6px;font-size:20px;margin-bottom:26px}
+.quote small{display:block;margin-top:26px;color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+.book{background:var(--gold);color:#111}
+.book .eb{color:#111}.book .eb::before{background:#111}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.info{margin-top:30px;font-size:17px;line-height:2;font-weight:500}
+form{background:#111;color:var(--fg);padding:40px;display:grid;gap:16px}
+form h3{font-size:42px}
+label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);font-weight:700}
+input,select{width:100%;margin-top:8px;padding:15px;background:var(--card);border:1px solid var(--line);color:var(--fg);font:15px Manrope,sans-serif}
+input:focus,select:focus{outline:0;border-color:var(--gold)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.slots button{padding:12px 0;background:var(--card);border:1px solid var(--line);color:var(--fg);font:600 14px Manrope;cursor:pointer;transition:.2s}
+.slots button.on{background:var(--gold);color:#111;border-color:var(--gold)}
+.slots button:disabled{opacity:.25;text-decoration:line-through;cursor:not-allowed}
+.ok{display:none;padding:16px;background:#1f2a1c;border:1px solid #3d5a33;color:#b9e0a5}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr}form{padding:26px}}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap">
+  <a href="#" class="logo"><span class="pole"></span>Iron &amp; Blade</a>
+  <div class="links"><a href="#services">Services</a><a href="#team">Barbers</a><a href="#book">Book</a></div>
+  <a href="#book" class="btn btn-g">Book now</a>
+</div></nav>
+
+<header class="hero">
+  <div class="big">IB</div>
+  <svg class="razor" viewBox="0 0 400 120" aria-hidden="true">
+    <defs><linearGradient id="bl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f4f4"/><stop offset=".5" stop-color="#9aa0a6"/><stop offset="1" stop-color="#d9dde0"/></linearGradient>
+    <linearGradient id="hd" x1="0" x2="1"><stop offset="0" stop-color="#5a3a1e"/><stop offset=".5" stop-color="#8a5a2e"/><stop offset="1" stop-color="#4a2e16"/></linearGradient></defs>
+    <path d="M20 40 L230 30 Q250 30 250 50 L250 70 Q250 88 230 88 L40 80 Q20 78 20 60Z" fill="url(#bl)"/>
+    <path d="M30 78 L230 86" stroke="#fff" stroke-width="2" opacity=".8"/>
+    <circle cx="245" cy="60" r="10" fill="#c9a45c"/>
+    <path d="M250 48 L390 40 Q398 40 398 50 L398 70 Q398 80 390 80 L250 72Z" fill="url(#hd)"/>
+    <circle cx="300" cy="60" r="3" fill="#c9a45c"/><circle cx="360" cy="60" r="3" fill="#c9a45c"/>
+  </svg>
+  <div class="wrap">
+    <div class="eb rv">Barbershop · Since 2015</div>
+    <h1 class="rv">Sharp cuts.<span>No excuses.</span></h1>
+    <p class="rv">Classic and modern haircuts, hot towel shaves and beard sculpting by barbers who actually listen.</p>
+    <div class="rv" style="display:flex;gap:14px;flex-wrap:wrap"><a href="#book" class="btn btn-g">Book your chair</a><a href="#services" class="btn btn-o">Prices</a></div>
+    <div class="stats rv"><div><b>12 000+</b><span>Cuts done</span></div><div><b>4.9</b><span>Google rating</span></div><div><b>4</b><span>Master barbers</span></div></div>
+  </div>
+</header>
+
+<section id="services"><div class="wrap svc">
+  <div class="rv"><div class="eb">Services</div><h2 class="h2">The <span>menu</span></h2><p class="l">Every service includes a consultation, hot towel and styling with premium products. Complimentary drink on the house.</p></div>
+  <div class="list" id="list"></div>
+</div></section>
+
+<section id="team" class="team"><div class="wrap">
+  <div class="rv"><div class="eb">The crew</div><h2 class="h2">Meet the <span>barbers</span></h2></div>
+  <div class="tgrid" id="tgrid"></div>
+</div></section>
+
+<section class="quote"><div class="wrap rv">
+  <div class="st">★★★★★</div>
+  <q>Best fade I've ever had. Booked online in 20 seconds and walked out looking like a new man.</q>
+  <small>— Marco D., Google review</small>
+</div></section>
+
+<section id="book" class="book"><div class="wrap bgrid">
+  <div class="rv">
+    <div class="eb">Booking</div>
+    <h2 class="h2">Grab a<br>chair.</h2>
+    <div class="info">📍 7 Iron Street, Downtown<br>📞 +00 000 000 000<br>🕘 Mon–Fri 09–20 · Sat 09–17 · Sun closed</div>
+  </div>
+  <form class="rv" id="form">
+    <h3>Book online</h3>
+    <label>Service<select id="selS"></select></label>
+    <label>Barber<select id="selB"><option>Any available</option></select></label>
+    <label>Date<input type="date" id="date" required></label>
+    <div><label>Time</label><div class="slots" id="slots"></div></div>
+    <label>Name &amp; phone<input required placeholder="John · +00 000 000 000"></label>
+    <button class="btn btn-g">Confirm booking</button>
+    <div class="ok" id="ok">✓ You're booked! We'll text you a reminder 2 hours before.</div>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Iron &amp; Blade Barbershop</span><span>Demo website by <a href="https://sovalone.github.io/obsidian-quill/" style="color:var(--gold)">Obsidian Quill</a></span></div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>30));
+const S=[['Classic Cut','Scissor or clipper cut, wash & style','45 min',25],['Skin Fade','Precision fade, sharp line-up','50 min',28],['Beard Sculpt','Shape, trim, hot towel & oil','30 min',18],['Royal Shave','Straight razor, 3 hot towels','40 min',24],['Cut + Beard','The full package','75 min',39],['Kids Cut','Under 12 years old','30 min',16]];
+$('#list').innerHTML=S.map(([n,d,t,p])=>`<div class="rv"><div><h3>${n}</h3><small>${d}</small></div><span class="t">${t}</span><span class="p">€${p}</span></div>`).join('');
+$('#selS').innerHTML=S.map(([n,,t,p])=>`<option>${n} — €${p} (${t})</option>`).join('');
+const face=(hair,beard,skin)=>`<svg viewBox="0 0 200 220"><rect width="200" height="220" fill="none"/><path d="M30 220 Q30 160 100 155 Q170 160 170 220Z" fill="#222"/><path d="M80 140h40v25H80z" fill="${skin}"/><ellipse cx="100" cy="100" rx="45" ry="55" fill="${skin}"/>${hair}${beard}<circle cx="83" cy="98" r="4" fill="#111"/><circle cx="117" cy="98" r="4" fill="#111"/></svg>`;
+const T=[['Viktor','Head barber · Fades',face('<path d="M55 90 Q55 40 100 40 Q145 40 145 90 Q140 60 100 58 Q60 60 55 90Z" fill="#1a1a1a"/>','<path d="M58 110 Q60 165 100 168 Q140 165 142 110 Q135 140 100 142 Q65 140 58 110Z" fill="#2b1d12"/>','#d9a77c'),'#2a2115'],
+['Leo','Beards · Shaves',face('<path d="M55 85 Q50 35 100 35 Q150 35 145 85 Q130 50 100 52 Q70 50 55 85Z" fill="#6b4423"/>','<path d="M75 128 Q100 150 125 128 Q120 140 100 142 Q80 140 75 128Z" fill="#6b4423"/>','#f0c9a0'),'#1c2226'],
+['Sam','Modern cuts · Color',face('<path d="M55 88 Q52 30 105 32 Q150 36 145 88 Q140 55 120 50 Q90 70 55 88Z" fill="#c9a45c"/>','','#8d5a3b'),'#261c1c']];
+$('#tgrid').innerHTML=T.map(([n,r,svg,bg])=>`<div class="bar rv"><div class="ph" style="background:radial-gradient(circle at 50% 30%,${bg},#111)">${svg}</div><div class="i"><h3>${n}</h3><p>${r}</p></div></div>`).join('');
+$('#selB').innerHTML+=T.map(([n])=>`<option>${n}</option>`).join('');
+const d=$('#date');d.min=d.value=new Date().toISOString().slice(0,10);
+function slots(){const seed=[...d.value].reduce((a,c)=>a+c.charCodeAt(0),0);$('#slots').innerHTML=['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'].map((t,i)=>`<button type="button" ${(seed*(i+3))%5===0?'disabled':''}>${t}</button>`).join('')}
+slots();d.onchange=slots;
+$('#slots').onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;document.querySelectorAll('#slots button').forEach(x=>x.classList.toggle('on',x===b))};
+$('#form').onsubmit=e=>{e.preventDefault();$('#ok').style.display='block'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.07+'s';io.observe(el)});
+</script>
+</body>
+</html>
