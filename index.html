@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oleh Valo — Software & Web Developer</title>
+<meta name="description" content="Oleh Valo — software and web developer. Flutter, JavaScript, React, HTML, CSS, C#. Founder of Obsidian Quill studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0e;--card:rgba(20,19,26,.85);--line:#2e2c38;--fg:#F2EDDA;--mute:#a39e92;--v:#b79cff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#0b0b0e}
+body{color:var(--fg);font-family:Manrope,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;
+ background:linear-gradient(27deg,#151517 5px,transparent 5px) 0 5px,linear-gradient(207deg,#151517 5px,transparent 5px) 10px 0,linear-gradient(27deg,#222225 5px,transparent 5px) 0 10px,linear-gradient(207deg,#222225 5px,transparent 5px) 10px 5px,linear-gradient(90deg,#1b1b1e 10px,transparent 10px),linear-gradient(#1d1d20 25%,#1a1a1d 25%,#1a1a1d 50%,transparent 50%,transparent 75%,#242427 75%,#242427);background-color:#131315;background-size:20px 20px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(60% 45% at 75% 15%,rgba(150,110,255,.22),transparent 70%),radial-gradient(50% 40% at 10% 100%,rgba(120,80,255,.14),transparent 70%)}
+h1,h2,h3{font-family:Montserrat,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+em{font-style:normal;color:transparent;background:linear-gradient(100deg,#b79cff,#e9dcff,#8f6bff);-webkit-background-clip:text;background-clip:text}
+a{color:inherit;text-decoration:none}
+.wrap{position:relative;max-width:1100px;margin:0 auto;padding:0 22px}
+.eb{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--v);margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-v{background:linear-gradient(120deg,#e9dcff,#b79cff);color:#120f1c}
+.btn-o{border:1px solid var(--line)}.btn-o:hover{border-color:var(--v)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;min-height:100vh;padding:80px 0}
+.hero h1{font-size:clamp(46px,7vw,92px)}
+.role{font-size:clamp(20px,2.4vw,26px);color:var(--mute);margin:18px 0 26px}
+.hero p{color:#cfc9bc;font-size:18px;max-width:520px;margin-bottom:32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.ph{position:relative;border-radius:30px;overflow:hidden;aspect-ratio:3/4;border:1px solid var(--line);box-shadow:0 0 0 1px rgba(183,156,255,.15),0 40px 80px rgba(0,0,0,.6),0 0 80px rgba(150,110,255,.18)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(11,11,14,.6))}
+.ph .tag{position:absolute;left:18px;bottom:18px;z-index:1;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.12em;background:rgba(11,11,14,.7);border:1px solid var(--line);padding:8px 12px;border-radius:999px}
+.ph .tag i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px;box-shadow:0 0 10px #4ade80}
+@media(max-width:860px){.hero{grid-template-columns:1fr;min-height:auto;padding:60px 0 40px}.ph{max-width:380px}}
+section{padding:70px 0}
+.h2{font-size:clamp(34px,5vw,56px);margin-bottom:34px}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:border-color .3s,transform .3s}
+.sk:hover{border-color:var(--v);transform:translateY(-4px)}
+.sk b{font-family:Montserrat;font-size:24px;display:block}
+.sk small{color:var(--mute);font-size:15px;display:block;margin-top:6px}
+@media(max-width:860px){.skills{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.skills{grid-template-columns:1fr}}
+/* projects */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pj{display:block;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;transition:border-color .3s,transform .3s}
+.pj:hover{border-color:var(--v);transform:translateY(-4px)}
+.pj .k{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--v)}
+.pj h3{font-size:26px;margin:10px 0 8px}
+.pj p{color:var(--mute)}
+.pj .u{display:block;margin-top:16px;font-size:14px;color:#cfc9bc}
+@media(max-width:760px){.proj{grid-template-columns:1fr}}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{color:#cfc9bc;font-size:17px}
+.facts div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.facts span:first-child{color:var(--mute)}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.contact{text-align:center;padding:90px 0}
+.contact h2{font-size:clamp(36px,6vw,68px);margin-bottom:24px}
+.contact .cta{justify-content:center}
+footer{padding:30px 0;text-align:center;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="eb">Portfolio</div>
+      <h1>Oleh <em>Valo</em></h1>
+      <div class="role">Software &amp; Web Developer · Founder of Obsidian Quill</div>
+      <p>I build fast, modern websites and cross-platform apps for businesses, from the first sketch to launch and ongoing care. Flutter for mobile and desktop, JavaScript and React for the web, C# for tools and backends.</p>
+      <div class="cta"><a class="btn btn-v" href="#projects">See my work →</a><a class="btn btn-o" href="mailto:hello@obsidianquill.studio">Contact me</a></div>
+    </div>
+    <div class="ph"><img src="photo.jpg" alt="Oleh Valo"><span class="tag"><i></i>Available for projects</span></div>
+  </header>
+
+  <section>
+    <div class="eb">Skills</div>
+    <h2 class="h2">What I <em>work with</em></h2>
+    <div class="skills">
+      <div class="sk"><b>Flutter / Dart</b><small>iOS, Android, Windows and web apps from one codebase</small></div>
+      <div class="sk"><b>JavaScript</b><small>Interactive sites, animations, browser apps</small></div>
+      <div class="sk"><b>React</b><small>Component-based web applications and dashboards</small></div>
+      <div class="sk"><b>HTML &amp; CSS</b><small>Responsive, accessible, fast-loading layouts</small></div>
+      <div class="sk"><b>C#</b><small>Desktop tools, utilities and backend logic</small></div>
+      <div class="sk"><b>Delivery</b><small>Git &amp; GitHub, domains, DNS, hosting, SEO, GDPR basics</small></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="eb">Selected projects</div>
+    <h2 class="h2">Live <em>work</em></h2>
+    <div class="proj">
+      <a class="pj" href="https://obsidianquill.studio" target="_blank" rel="noopener"><span class="k">Own studio · 12 languages</span><h3>Obsidian Quill</h3><p>Studio website with animated 3D hero, price calculator, hologram language picker and working contact form.</p><span class="u">obsidianquill.studio ↗</span></a>
+      <a class="pj" href="https://sovalone.github.io/stavby-bartoncik/" target="_blank" rel="noopener"><span class="k">Client · Czech Republic</span><h3>Stavby Bartončík</h3><p>Construction company website with machinery catalogue, gallery and a custom admin panel for editing content.</p><span class="u">sovalone.github.io/stavby-bartoncik ↗</span></a>
+      <a class="pj" href="https://sovalone.github.io/blackbee/" target="_blank" rel="noopener"><span class="k">Concept · 3D &amp; sound</span><h3>BLACKBEE</h3><p>Gaming keyboard lab with 3D visuals, sound and a live keyboard configurator.</p><span class="u">sovalone.github.io/blackbee ↗</span></a>
+      <a class="pj" href="https://sovalone.github.io/portfolio/dugis-burger/" target="_blank" rel="noopener"><span class="k">Demo · restaurant</span><h3>Dugi's Burger</h3><p>Restaurant site in Czech with menu, delivery ordering link and location.</p><span class="u">sovalone.github.io/portfolio/dugis-burger ↗</span></a>
+      <a class="pj" href="https://sovalone.github.io/portfolio/iron-blade-barber/" target="_blank" rel="noopener"><span class="k">Demo · barbershop</span><h3>Iron &amp; Blade</h3><p>Barbershop site with price list, team and online booking with time slots.</p><span class="u">sovalone.github.io/portfolio/iron-blade-barber ↗</span></a>
+      <a class="pj" href="https://sovalone.github.io/portfolio/brightsmile-dental/" target="_blank" rel="noopener"><span class="k">Demo · clinic</span><h3>BrightSmile Dental</h3><p>Dental clinic site with treatments, doctors, FAQ and appointment form. Plus a café demo: Ember &amp; Oak.</p><span class="u">sovalone.github.io/portfolio/brightsmile-dental ↗</span></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="about">
+      <div><div class="eb">About</div><h2 class="h2">Hands-on <em>builder</em></h2></div>
+      <div>
+        <p>Before code I worked with my hands in construction, so I treat software the same way: solid foundations, clean finish, nothing left half-done. Today I run Obsidian Quill, a small studio that delivers websites and Flutter apps for businesses across Europe.</p>
+        <div class="facts" style="margin-top:24px">
+          <div><span>Based</span><span>Romania · working remotely across the EU</span></div>
+          <div><span>Languages</span><span>Ukrainian · English · Romanian · Czech · Russian</span></div>
+          <div><span>Code</span><span><a href="https://github.com/SOVALONE" target="_blank" rel="noopener" style="color:var(--v)">github.com/SOVALONE ↗</a></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="eb">Contact</div>
+    <h2>Let's build <em>something.</em></h2>
+    <div class="cta"><a class="btn btn-v" href="mailto:hello@obsidianquill.studio">hello@obsidianquill.studio</a><a class="btn btn-o" href="https://obsidianquill.studio" target="_blank" rel="noopener">obsidianquill.studio</a></div>
+  </section>
+  <footer>© 2026 Oleh Valo · Obsidian Quill</footer>
+</div>
+</body>
+</html>
